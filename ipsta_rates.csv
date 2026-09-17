@@ -1,0 +1,3 @@
+date,spot_differential,garbled_open,garbled_high,garbled_low,garbled_close,ungarbled_open,ungarbled_high,ungarbled_low,ungarbled_close,gl500_open,gl500_high,gl500_low,gl500_close,trade_volume_tons,source_url
+2026-09-17,MINUS ONE HUNDRED,72300,72300,72300,72300,70300,70300,70300,70300,69300,69300,69300,69300,34,http://ipstaindia.com/source/dmr/5.pdf
+2026-09-16,STEADY,72400,72400,72400,72400,70400,70400,70400,70400,69400,69400,69400,69400,29.5,http://ipstaindia.com/source/dmr/6.pdf
