@@ -13,6 +13,15 @@ An automated Python pipeline designed to monitor, scrape, and structure daily bl
 
 * **Language:** Python 3.11+
 * **Libraries:** `requests`, `beautifulsoup4`, `pdfplumber`, `pandas`
+  
+## Installation
+
+1. Clone the repository:
+`git clone https://github.com/preyesh2002/black-pepper-price-scraper.git`
+`cd black-pepper-price-scraper`
+
+2. Install the required dependencies:
+`pip install requests beautifulsoup4 pdfplumber pandas`
 
 ## Project Structure
 
@@ -27,7 +36,49 @@ black-pepper-price-scraper/
 │   └── pdf_links.csv        # Log of extracted PDF target URLs
 │
 ├── ipsta_rates.csv          # Master time-series dataset of daily market rates
-└── README.md
+└── README.md## Usage
+
+```
+To execute the pipeline manually, run the parser module from the root directory. The script will fetch the latest HTML, identify target PDFs, parse the rates, and update the master CSV:
+
+`python src/parser.py`
+
+### Output Data Format (`ipsta_rates.csv`)
+
+| date | spot_differential | garbled_open | garbled_high | garbled_low | garbled_close | ungarbled_open | gl500_close | trade_volume_tons |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 2026-09-17 | MINUS ONE HUNDRED | 72300 | 72300 | 72300 | 72300 | 70300 | 69300 | 34 |
+
+## Configuration
+
+No external API keys are required to run this scraper. Ensure that your execution environment has write access to the root directory so the script can successfully append data to `ipsta_rates.csv` and `data/pdf_links.csv`.
+
+## Roadmap
+
+* **Cloud Automation:** Implement GitHub Actions scheduled workflows to execute the scraping pipeline daily at 8:00 PM IST autonomously.
+* **Data Visualization:** Connect `ipsta_rates.csv` to a Streamlit dashboard to track moving averages and price volatility over time.
+
+## Contributing
+
+Contributions are welcome. If you find a bug in the PDF extraction logic (e.g., if IPSTA changes their PDF layout) or want to add visualization features:
+1. Fork the project.
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the branch (`git push origin feature/AmazingFeature`).
+5. Open a Pull Request.
+
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+
+## Contact
+
+Preyesh C P - [GitHub Profile](https://github.com/preyesh2002)
+
+Project Link: [https://github.com/preyesh2002/black-pepper-price-scraper](https://github.com/preyesh2002/black-pepper-price-scraper)
 
 
 
